@@ -75,6 +75,11 @@ function App() {
           <input
             type="text"
             value={input}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                handleAddTask();
+              }
+            }}
             onChange={handleInputChange}
             placeholder="Add task"
             className="bg-white text-black text-3xl pl-0.5 py-1.5 flex-1 "
@@ -82,12 +87,6 @@ function App() {
 
           <button
             id="addBtn"
-            onKeyDown={(e) => {
-              if (e.key) {
-                handleAddTask();
-                console.log('key was pressed');
-              }
-            }}
             onClick={handleAddTask}
             className="bg-mist-300 px-2.5 h-full text-black text-3xl hover:bg-mist-400 active:bg-mist-500 "
           >
