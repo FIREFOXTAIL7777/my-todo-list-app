@@ -1,14 +1,18 @@
-import { TodoList } from './components/TodoList';
-import { InputBox } from './components/InputBox';
 import { useState } from 'react';
 import './App.css';
 
 function App() {
   const [input, setInput] = useState('');
-  const [clicked, setClicked] = useState(false);
+  const [tasks, setTasks] = useState([
+    'Do the laundry',
+    'Take a shower',
+    'Study javascript',
+  ]);
 
-  function handleAddButton() {
-    setClicked(true);
+  function handleAddTask() {}
+
+  function handleInputChange(e) {
+    setInput(e.target.value);
   }
 
   return (
@@ -27,9 +31,33 @@ function App() {
           <h1>ToDo List</h1>
         </div>
 
-        <InputBox setInput={setInput} handleAddButton={handleAddButton} />
+        <div
+          id="input-container"
+          className=" h-20 w-full flex items-center justify-center px-5 space-x-1"
+        >
+          <input
+            type="text"
+            value={input}
+            onChange={handleInputChange}
+            placeholder="Add task"
+            className="bg-white text-black text-3xl py-1.5 flex-1 "
+          />
 
-        <TodoList clicked={clicked} input={input} />
+          <button
+            className="bg-mist-300 px-10 py-1.5 text-black text-3xl hover:bg-mist-400 active:bg-mist-500 "
+            onClick={handleAddTask}
+          >
+            Add
+          </button>
+        </div>
+
+        <ol>
+          {tasks.map((task, index) => {
+            <li key={index}>
+              <span>{task}</span>
+            </li>;
+          })}
+        </ol>
       </div>
     </div>
   );
