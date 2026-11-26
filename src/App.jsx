@@ -59,7 +59,7 @@ function App() {
     >
       <div
         id="app-container"
-        className="bg-slate-700 flex flex-col items-start justify-start w-130 h-150 px-5 "
+        className="bg-slate-700 flex flex-col items-start justify-start w-130 h-150 px-5 pb-5 "
       >
         <div
           id="title-container"
@@ -82,51 +82,56 @@ function App() {
             }}
             onChange={handleInputChange}
             placeholder="Add task"
-            className="bg-white text-black text-3xl pl-0.5 py-1.5 flex-1 "
+            className="bg-white text-black text-3xl pl-0.5 py-1.5 flex-1 rounded"
           />
 
           <button
             id="addBtn"
             onClick={handleAddTask}
-            className="bg-mist-300 px-2.5 h-full text-black text-3xl hover:bg-mist-400 active:bg-mist-500 "
+            className="bg-mist-300 px-2.5 h-full text-black text-3xl hover:bg-mist-400 active:bg-mist-500 rounded "
           >
-            <Plus />
+            <Plus color="black" />
           </button>
         </div>
 
-        <ol className="w-full space-y-5">
+        <ol className="w-full min-w-0 space-y-5 overflow-y-auto scrollbar-none">
           {tasks.map((task, index) => {
             return (
-              <li className="flex flex-row w-full" key={index}>
+              <li key={index} className="flex w-full min-w-0">
                 <div
                   id="task"
-                  className="bg-zinc-800 p-0 text-start pl-0.5 py-1.5 text-3xl font-san grow "
+                  className="flex-1 min-w-0 bg-zinc-800 pl-0.5 py-2 rounded"
                 >
-                  {task}
+                  <p
+                    id="text"
+                    className="text-start text-gray-100 text-3xl font-san whitespace-normal wrap-break-word line-clamp-2"
+                  >
+                    {task}
+                  </p>
                 </div>
 
                 <button
                   id="delete"
                   onClick={() => handleDeleteTask(index)}
-                  className="bg-red-700 px-2.5 hover:bg-red-600 active:bg-red-800"
+                  className="bg-red-700 px-2.5 hover:bg-red-600 active:bg-red-800 shrink-0 rounded"
                 >
-                  <Trash />
+                  <Trash color="white" />
                 </button>
 
                 <button
                   id="up"
                   onClick={() => handleMoveTaskUp(index)}
-                  className="bg-gray-800 border-r border-gray-600 px-2.5 hover:bg-gray-700 active:bg-gray-900"
+                  className="bg-gray-800 border-r border-gray-600 px-2.5 hover:bg-gray-700 active:bg-gray-900 shrink-0 rounded"
                 >
-                  <ChevronUp />
+                  <ChevronUp color="white" />
                 </button>
 
                 <button
                   id="down"
                   onClick={() => handleMoveTaskDown(index)}
-                  className="bg-gray-800 px-2.5 hover:bg-gray-700 active:bg-gray-900"
+                  className="bg-gray-800 px-2.5 hover:bg-gray-700 active:bg-gray-900 shrink-0 rounded"
                 >
-                  <ChevronDown />
+                  <ChevronDown color="white" />
                 </button>
               </li>
             );
