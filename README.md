@@ -1,3 +1,7 @@
+# Introduction
+
+A simple React To-Do List app that lets you add, delete, and rearrange tasks. Built with React and Tailwind CSS.
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
