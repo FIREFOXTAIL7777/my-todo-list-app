@@ -59,7 +59,7 @@ function App() {
     >
       <div
         id="app-container"
-        className="bg-slate-700 flex flex-col items-start justify-start w-130 h-150 px-5 pb-5 "
+        className="bg-slate-700 flex flex-col items-start justify-start w-full h-150 px-5 pb-5 "
       >
         <div
           id="title-container"
