@@ -59,7 +59,7 @@ function App() {
     >
       <div
         id="app-container"
-        className="bg-slate-700 flex flex-col items-start justify-start w-full h-150 px-5 pb-5 "
+        className="bg-slate-700 flex flex-col items-start justify-start w-full md:w-130 h-150 px-5 pb-5 "
       >
         <div
           id="title-container"
@@ -82,13 +82,13 @@ function App() {
             }}
             onChange={handleInputChange}
             placeholder="Add task"
-            className="bg-white text-black text-3xl pl-0.5 py-1.5 flex-1 rounded"
+            className="bg-white text-black text-2xl md:text-3xl pl-0.5 py-1.5 w-full rounded"
           />
 
           <button
             id="addBtn"
             onClick={handleAddTask}
-            className="bg-mist-300 px-2.5 h-full text-black text-3xl hover:bg-mist-400 active:bg-mist-500 rounded "
+            className="bg-mist-300 px-2.5 h-full text-black text-2xl md:text-3xl hover:bg-mist-400 active:bg-mist-500 rounded "
           >
             <Plus color="black" />
           </button>
@@ -104,7 +104,7 @@ function App() {
                 >
                   <p
                     id="text"
-                    className="text-start text-gray-100 text-3xl font-san whitespace-normal wrap-break-word line-clamp-2"
+                    className="text-start text-gray-100 text-2xl md:text-3xl font-san whitespace-normal wrap-break-word line-clamp-2"
                   >
                     {task}
                   </p>
